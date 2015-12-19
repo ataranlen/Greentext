@@ -1,0 +1,11 @@
+name: Greentext
+main: com.minetexas.greentext.Greentext
+version: 0.1
+author: ataranlen
+description: "Bro... do you even lift?"
+
+commands:
+  me:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
