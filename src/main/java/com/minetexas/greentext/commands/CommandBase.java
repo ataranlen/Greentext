@@ -3,6 +3,7 @@ package com.minetexas.greentext.commands;
 import java.util.HashMap;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -53,15 +54,21 @@ public class CommandBase implements CommandExecutor {
 			builder.append(">");
 			
 			for(String s : args) {
+				s = s.replace("@p", GTColor.LightBlue+sender.getName()+GTColor.LightGreen);
+				if(sender instanceof Player){
+					 //Then we cast the sender to player,which means now we can handle him through 'player' variable like any other players
+					   Player player=(Player) sender;
+					   Location loc = player.getLocation();
+					   
+						s = s.replace("@l", GTColor.Gold+"XYZ: 1337 250 1337"+GTColor.LightGreen);
+					}
 			    builder.append(" "+s);
 			}
 			String meme = builder.toString();
 			GTLog.info(sender.getName()+meme);
 
+			Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage(GTColor.LightGreen+meme));
 
-			for (Player player : Bukkit.getOnlinePlayers()) {
-				player.sendMessage(GTColor.LightGreen+meme);
-			}
 			return true;
 		}
 	}
