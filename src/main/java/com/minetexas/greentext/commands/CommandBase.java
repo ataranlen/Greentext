@@ -1,9 +1,9 @@
 package com.minetexas.greentext.commands;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,6 +13,9 @@ import com.minetexas.greentext.exception.GTException;
 import com.minetexas.greentext.util.GTColor;
 import com.minetexas.greentext.util.GTLog;
 import com.minetexas.greentext.util.GTSettings;
+import com.dthielke.herochat.Chatter;
+import com.dthielke.herochat.ChatterManager;
+import com.dthielke.herochat.Herochat;
 
 public class CommandBase implements CommandExecutor {
 
@@ -57,8 +60,7 @@ public class CommandBase implements CommandExecutor {
 				s = s.replace("@p", GTColor.LightBlue+sender.getName()+GTColor.LightGreen);
 				if(sender instanceof Player){
 					 //Then we cast the sender to player,which means now we can handle him through 'player' variable like any other players
-					   Player player=(Player) sender;
-					   Location loc = player.getLocation();
+//					   Location loc = player.getLocation();
 					   
 						s = s.replace("@l", GTColor.Gold+"XYZ: 1337 250 1337"+GTColor.LightGreen);
 					}
@@ -67,7 +69,30 @@ public class CommandBase implements CommandExecutor {
 			String meme = builder.toString();
 			GTLog.info(sender.getName()+meme);
 
-			Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage(GTColor.LightGreen+meme));
+			Collection <? extends Player> players = Bukkit.getOnlinePlayers();//.forEach(p -> p.sendMessage(GTColor.LightGreen+meme));
+
+
+			Boolean useHerochat = false;
+			if (GTSettings.hasHerochat == true) {
+				Herochat hc = Herochat.getPlugin();
+				useHerochat = hc.isEnabled();
+
+				GTLog.debug("Herochat usable? "+useHerochat);
+			}
+			for(Player p : players) {
+				if (useHerochat) {
+					ChatterManager cm = Herochat.getChatterManager();
+					Player player=(Player) sender;
+					Chatter chatter = cm.getChatter(player);
+					Chatter chattee = cm.getChatter(p);
+					if (chattee.isIgnoring(chatter)) {
+						continue;
+					}
+				}
+				p.sendMessage(GTColor.LightGreen+meme);
+			}
+			
+			
 
 			return true;
 		}

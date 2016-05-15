@@ -1,5 +1,6 @@
 package com.minetexas.greentext;
 
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.minetexas.greentext.commands.CommandBase;
@@ -22,5 +23,11 @@ public class Greentext extends JavaPlugin {
 	@Override
 	public void onDisable() {
 		GTLog.info("onDisable has been invoked!");
+	}
+	
+	public boolean hasPlugin(String name) {
+		Plugin p;
+		p = getServer().getPluginManager().getPlugin(name);
+		return (p != null);
 	}
 }
