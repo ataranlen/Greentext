@@ -56,13 +56,57 @@ public class CommandBase implements CommandExecutor {
 				Player player1 = (Player)sender;
 				name = player1.getName();
 			}
-			if (!permissionCheck(GTSettings.PERMISSION_ANON)){
-				builder.append(name + " ");
-			    builder.append(">");
+			if (label.contains("me0")) {
+			    builder.append("> ");
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.Black);
+			} else if (label.contains("me1")) {
+			    builder.append("> ");
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.Navy);
 			} else if (label.contains("me2")) {
 			    builder.append("> ");
-			    builder.append(GTColor.LightBlue + sender.getName() + " " + GTColor.LightGreen);
-
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.Green);
+			} else if (label.contains("me3")) {
+			    builder.append("> ");
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.Blue);
+			} else if (label.contains("me4")) {
+			    builder.append("> ");
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.Red);
+			} else if (label.contains("me5")) {
+			    builder.append("> ");
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.Purple);
+			} else if (label.contains("me6")) {
+			    builder.append("> ");
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.Gold);
+			} else if (label.contains("me7")) {
+			    builder.append("> ");
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.LightGray);
+			} else if (label.contains("me8")) {
+			    builder.append("> ");
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.Gray);
+			} else if (label.contains("me9")) {
+			    builder.append("> ");
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.DarkPurple);
+			} else if (label.contains("mea")) {
+			    builder.append("> ");
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.LightGreen);
+			} else if (label.contains("meb")) {
+			    builder.append("> ");
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.LightBlue);
+			} else if (label.contains("mec")) {
+			    builder.append("> ");
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.Rose);
+			} else if (label.contains("med")) {
+			    builder.append("> ");
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.LightPurple);
+			} else if (label.contains("mee")) {
+			    builder.append("> ");
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.Yellow);
+			} else if (label.contains("mef")) {
+			    builder.append("> ");
+			    builder.append(GTColor.LightBlue + sender.getName() + GTColor.White);
+			} else if (!permissionCheck(GTSettings.PERMISSION_ANON)) {
+				builder.append(name + " ");
+			    builder.append(">");
 			} else {
 			    builder.append(">");
 			}
@@ -88,7 +132,6 @@ public class CommandBase implements CommandExecutor {
 					return false;
 				} 
 		    } 
-			GTLog.info(sender.getName()+meme);
 
 			Collection <? extends Player> players = Bukkit.getOnlinePlayers();
 			Boolean useHerochat = false;
@@ -96,7 +139,6 @@ public class CommandBase implements CommandExecutor {
 				Herochat hc = Herochat.getPlugin();
 				useHerochat = hc.isEnabled();
 
-				GTLog.debug("Herochat usable? "+useHerochat);
 			}
 			for(Player p : players) {
 				if (useHerochat) {

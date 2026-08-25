@@ -18,7 +18,22 @@ public class Greentext extends JavaPlugin implements Listener {
 		GTSettings.init(this);
 
 		this.getCommand("me").setExecutor(new CommandBase());
+	    this.getCommand("me0").setExecutor(new CommandBase());
+	    this.getCommand("me1").setExecutor(new CommandBase());
 	    this.getCommand("me2").setExecutor(new CommandBase());
+	    this.getCommand("me3").setExecutor(new CommandBase());
+	    this.getCommand("me4").setExecutor(new CommandBase());
+	    this.getCommand("me5").setExecutor(new CommandBase());
+	    this.getCommand("me6").setExecutor(new CommandBase());
+	    this.getCommand("me7").setExecutor(new CommandBase());
+	    this.getCommand("me8").setExecutor(new CommandBase());
+	    this.getCommand("me9").setExecutor(new CommandBase());
+	    this.getCommand("mea").setExecutor(new CommandBase());
+	    this.getCommand("meb").setExecutor(new CommandBase());
+	    this.getCommand("mec").setExecutor(new CommandBase());
+	    this.getCommand("med").setExecutor(new CommandBase());
+	    this.getCommand("mee").setExecutor(new CommandBase());
+	    this.getCommand("mef").setExecutor(new CommandBase());
 	    if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             Bukkit.getPluginManager().registerEvents(this, this);
 	    } else {

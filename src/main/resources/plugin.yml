@@ -3,14 +3,78 @@ main: com.minetexas.greentext.Greentext
 version: 0.6
 author: ataranlen
 description: "Bro... do you even lift?"
-softdepend: [PlaceholderAPI]
+depend: [PlaceholderAPI,Herochat]
 
 commands:
   me:
     description: Spit some tough memes
     permission: greentext.use
     permission-message: "You'd better check yourself before you wreck yourself!"
+  me0:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
+  me1:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
   me2:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
+  me2:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
+  me3:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
+  me4:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
+  me5:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
+  me6:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
+  me7:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
+  me8:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
+  me9:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
+  mea:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
+  meb:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
+  mec:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
+  med:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
+  mee:
+    description: Spit some tough memes
+    permission: greentext.use
+    permission-message: "You'd better check yourself before you wreck yourself!"
+  mef:
     description: Spit some tough memes
     permission: greentext.use
     permission-message: "You'd better check yourself before you wreck yourself!"
